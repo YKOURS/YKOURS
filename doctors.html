@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors</title>
+    <style>
+        body{
+            background-image: url("doctor.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%,100%;
+        }
+    #div1{
+    margin:0px 300px 0px 900px;
+    transform: translateX(290px) translateY(-55px);
+    background-color:rgb(0, 0, 0);
+    visibility:hidden;
+    padding:2px 0px 2px 10px;
+    transition-delay:5s;
+    }
+    h3:hover{
+    background-color: rgba(14, 123, 219, 0.787);
+    padding: 2px 3px 2px 3px;
+    transition:0.3s;
+    cursor:pointer;
+    }
+    #ig1{
+     transform: translateX(1270px) translateY(-72px);
+     border: 3px solid rgb(8, 8, 8);
+     border-radius: 50% 50%;
+    }
+#ig1:hover+#div1{
+    visibility: visible; 
+    transition-delay:0.3s; 
+} 
+h1{
+        transform: translateX(350px);
+        text-align: center;
+        font-size: 50px;
+        border: 3px solid rgb(19, 19, 18);
+        padding: 10px 0px 10px 0px;
+        margin:20px 500px 0px 500px;
+        border-radius: 30px 30px;
+        background-color: rgba(246, 238, 238, 0.9);
+        color:rgb(0, 0, 0);
+        animation: mov1 3s 5;
+    }
+    ::placeholder{
+        color:black;
+        opacity:1;
+    }
+    input{
+        transform: translateX(1000px) translateY(-80px);
+        padding:10px 10px;
+        border:2px solid black;
+        font-size: 20px;
+    }
+    @keyframes mov1{
+        0%{
+            background-color: rgba(246, 238, 238, 0.9);
+            color:rgb(0, 0, 0);
+            border:3px solid white
+        }
+        50%{
+            background-color: rgba(0, 0, 0, 0.9);
+            color:white;
+        }
+        100%{
+            background-color: rgba(235, 223, 223, 0.9);
+            color:rgb(0, 0, 0);
+            border:3px solid rgb(243, 235, 235)
+        }
+    }
+    p{
+        margin:0px 1000px 0px 00px;
+        transform: translateX(820px) translateY(-175px);
+        font-size:22px;
+        background-color: rgb(240, 248, 246);
+        padding:5px 10px;
+        border:1px solid black;
+        border-radius: 10px 10px;
+    }
+    #b1{
+        font-size:29px;  
+        animation: mov2 3s 5;
+    }
+    button{
+        transform: translateX(900px) translateY(20px);
+        padding:5px 10px;
+        font-size: 22px;
+        border:2px solid black;
+        border-radius: 10px 10px;
+    }
+    button:hover{
+        background-color:rgba(13, 83, 236, 0.814);
+        color:white;
+        font-size:23px;
+        border:2px solid whitesmoke;
+    }
+    @keyframes mov2{
+        0%{
+            color:black;
+        }
+        50%{
+            color:rgba(26, 26, 234, 0.966);
+        }
+        100%{
+            color:black;
+        }
+    }
+    
+    </style>
+</head>
+<body>
+    <h1 style="color: rgb(0, 0, 0);"><i><b>DOCTORS</b></i></h1>
+      <!-- Search Form -->
+      <img src="menu.jpg" id="ig1" alt="" height="4%" width="4%">
+<div id="div1">
+<h3 style="color: aliceblue;" onclick="myfun1()">HOME</h3> 
+<h3 style="color: aliceblue;" onclick="myfun2()">DIAGNOSIS</h3> 
+<h3 style="color: aliceblue;">DOCTORS</h3>
+</div>
+<p><b id="b1">F</b>IND <b id="b1">B</b>EST <b id="b1">D</b>OCTORS <b id="b1">N</b>EAR <b id="b1">Y</b>OU</p>
+<input type="text" placeholder="Enter City" id="inp1">
+<button onclick="myfun()"><b>Search</b></button>
+<script>
+    function myfun(){
+        location.replace("https://www.justdial.com/"+document.getElementById("inp1").value+"/Doctors-Specialists/nct-11151209");
+    }
+    function myfun1(){
+        location.replace("index.html");
+    }
+    function myfun2(){
+        location.replace("diagnosis.html");   
+    }
+</script>
+</body>
+</html>

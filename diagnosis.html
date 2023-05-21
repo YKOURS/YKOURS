@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis</title>
+    <style>
+     /* .speech {
+          padding:100px 50px; 
+        margin:300px 700px 00px 400px;
+    } */
+    body{
+        background-image: url("diagnosis.jpg");
+        background-repeat: no-repeat;
+       background-size: 100% 100%;
+       overflow-y: hidden;
+    }
+    .speech input {
+    border: 0; 
+    width: 240px;
+    display: inline-block;
+     display:none;
+    } 
+    #ig{
+    transform: translateX(50px) translateY(-200px);
+    height:250px;
+    width: 200px;
+    border-radius: 50% 50%;
+    }
+    h1{
+        text-align: center;
+        font-size: 40px;
+        border: 2px solid yellow;
+        padding: 2px 0px 2px 0px;
+        margin:20px 450px 0px 450px;
+        border-radius: 30px 30px;
+    }
+    #one{
+        border:2px solid white;
+        transform: translateY(-150px);
+        padding: 2px 10px;
+        margin:0px 800px 0px 10px;
+    }
+    #ig1{
+     transform: translateX(1200px) translateY(-60px);
+     border: 3px solid yellow;
+     border-radius: 50% 50%;
+    }
+    #div1{
+    margin:0px 300px 0px 900px;
+    transform: translateX(290px) translateY(-55px);
+    background-color:rgb(0, 0, 0);
+    visibility:hidden;
+    padding:2px 0px 2px 10px;
+    transition-delay:5s;
+    }
+    h3:hover{
+    background-color: rgba(14, 123, 219, 0.787);
+    padding: 2px 3px 2px 3px;
+    transition:0.3s;
+    cursor:pointer;
+    }
+#ig1:hover+#div1{
+    visibility: visible; 
+    transition-delay:0.3s; 
+} 
+@media only screen and (min-device-width:768px) and (max-device-width:1024px)  
+{ 
+  body{
+      background-image: url("diagnosis.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      overflow-y: hidden;
+    }
+
+    .speech input {
+    border: 0; 
+    width: 0px;
+    /* display: inline-block; */
+     display:none;
+    } 
+    #ig{
+    transform: translateX(50px) translateY(-200px);
+    height:250px;
+    width: 200px;
+    border-radius: 50% 50%;
+    }
+    h1{
+        text-align: center;
+        font-size: 40px;
+        border: 2px solid yellow;
+        padding: 2px 0px 2px 0px;
+        /* margin:20px 300px 0px 300px; */
+        border-radius: 30px 30px;
+    }
+    #one{
+        border:2px solid white;
+        transform: translateY(-180px);
+        padding: 2px 10px;
+        margin:0px 600px 0px 10px;
+    }
+    #ig1{
+     transform: translateX(750px) translateY(-55px);
+     border: 3px solid yellow;
+     border-radius: 50% 50%;
+    }
+    #div1{
+    margin:0px 0px 0px 0px;
+    transform: translateX(300px) translateY(-45px);
+    background-color:rgb(0, 0, 0);
+    visibility:hidden;
+    padding:2px 0px 2px 10px;
+    transition-delay:5s;
+    }
+    h3:hover{
+    background-color: rgba(14, 123, 219, 0.787);
+    padding: 2px 3px 2px 3px;
+    transition:0.3s;
+    cursor:pointer;
+    }
+#ig1:hover+#div1{
+    visibility: visible; 
+    transition-delay:0.3s; 
+} 
+}
+</style>
+</head>
+<body>
+      <h1 style="color: yellow;"><i><b>Conversational AI</b></i></h1>
+      <!-- Search Form -->
+      <img src="menu.jpg" id="ig1" alt="" height="5%" width="5%">
+<div id="div1">
+<h3 style="color: aliceblue;" onclick="myfun1()">HOME</h3> 
+<h3 style="color: aliceblue;">DIAGNOSIS</h3> 
+<h3 style="color: aliceblue;" onclick="myfun2()">DOCTORS</h3>
+</div><br><br><br>
+       <form id="labnol" method="get">
+        <div class="speech">
+          <input type="" name="q" id="transcript" placeholder="" />
+          <img onclick="startDictation()" src="voice.gif" id="ig">
+        </div>
+      </form>
+      <br>
+      <div id="one">
+       <h2 style="color: yellow;" id="two"><b>Diagnosis</h2></b></h2>
+       <p style="color: white;" id="three"><i><b>For self diagnosis click the microphone and communicate with AI system</b></i></p>
+       <p style="color: white;" id="four"><i><b>You can give any three Symptoms that you have</b></i></p>
+       <p style="color: white;" id="five"><i><b>Symptoms must be in alphabetical order</b></i></p>
+      </div>
+      <!-- HTML5 Speech Recognition API -->
+      <script>
+        function startDictation() {
+          if (window.hasOwnProperty('webkitSpeechRecognition')) {
+            var recognition = new webkitSpeechRecognition();
+      
+            recognition.continuous = false;
+            recognition.interimResults = false;
+      
+            recognition.lang = 'en-US';
+            recognition.start();
+      
+            recognition.onresult = function (e) {
+              document.getElementById('transcript').value = e.results[0][0].transcript;
+              recognition.stop();
+              myfun();
+            //   document.getElementById('labnol').submit();
+            };
+            function myfun(){
+                if(document.getElementById("transcript").value=="Cough, fever, Stomach pain.")
+              {
+                document.getElementById("two").innerHTML="Report";
+                document.getElementById("three").innerHTML="I think you are suffering from Typhoid";
+                document.getElementById("four").innerHTML="Take proper medication to get well soon";
+                document.getElementById("five").innerHTML="    ";
+              }else{
+                document.getElementById("two").innerHTML=document.getElementById("transcript").value;
+              }
+              if(document.getElementById("transcript").value=="Fever. Headache. Yellow skin.")
+              {
+                document.getElementById("two").innerHTML="Report";
+                document.getElementById("three").innerHTML="I think you are suffering from Jaundice";
+                document.getElementById("four").innerHTML="Take proper medication to get well soon";
+                document.getElementById("five").innerHTML="    ";
+              }
+              else{
+                document.getElementById("two").innerHTML=document.getElementById("transcript").value;
+              }
+              if(document.getElementById("transcript").value=="Fever. Headache. Red bumps.")
+              {
+                document.getElementById("two").innerHTML="Report";
+                document.getElementById("three").innerHTML="I think you are suffering from Chickenpox";
+                document.getElementById("four").innerHTML="Take proper medication to get well soon";
+                document.getElementById("five").innerHTML="    ";
+              }
+            }
+            recognition.onerror = function (e) {
+              recognition.stop();
+            };
+          }
+        }
+     function myfun1(){
+     location.replace("index.html");
+    }
+    function myfun2(){
+    location.replace("doctors.html");   
+    }
+      </script>
+</body>
+</html>
