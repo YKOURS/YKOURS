@@ -1,92 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctors</title>
+    <title>Document</title>
     <style>
-        body{
-            background-image: url("doctor.jpg");
-            background-repeat: no-repeat;
-            background-size: 100%,100%;
+        .nav{
+            display: flex;
+            flex-direction: row;
+            background-color:#4279bd;
+            align-items: center;
+            justify-content: space-between;
+            height: 5rem;
+            width: 38.1rem;
+            padding-left: 25rem;
+            border-radius: 5px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-    #div1{
-    margin:0px 300px 0px 900px;
-    transform: translateX(290px) translateY(-55px);
-    background-color:rgb(0, 0, 0);
-    visibility:hidden;
-    padding:2px 0px 2px 10px;
-    transition-delay:5s;
-    }
-    h3:hover{
-    background-color: rgba(14, 123, 219, 0.787);
-    padding: 2px 3px 2px 3px;
-    transition:0.3s;
-    cursor:pointer;
-    }
-    #ig1{
-     transform: translateX(1270px) translateY(-72px);
-     border: 3px solid rgb(8, 8, 8);
-     border-radius: 50% 50%;
-    }
-#ig1:hover+#div1{
-    visibility: visible; 
-    transition-delay:0.3s; 
-} 
-h1{
-        transform: translateX(350px);
-        text-align: center;
-        font-size: 50px;
-        border: 3px solid rgb(19, 19, 18);
-        padding: 10px 0px 10px 0px;
-        margin:20px 500px 0px 500px;
-        border-radius: 30px 30px;
-        background-color: rgba(246, 238, 238, 0.9);
-        color:rgb(0, 0, 0);
-        animation: mov1 3s 5;
-    }
-    ::placeholder{
+        .divban{
+          position: absolute;
+          width: 52rem;
+          z-index: 0;
+        }
+     #back{
+        position: absolute;
+        z-index:-1;
+        border-radius: 5px;
+        height: 50rem;
+     }
+     #transcript{
+      opacity:0;
+     }
+     ::placeholder{
         color:black;
         opacity:1;
     }
     input{
-        transform: translateX(1000px) translateY(-80px);
-        padding:10px 10px;
+        position:absolute;
+        top:3rem;
+        left:3rem;
+        padding:10px 15px;
         border:2px solid black;
+        border-radius: 5px 5px;
         font-size: 20px;
     }
-    @keyframes mov1{
-        0%{
-            background-color: rgba(246, 238, 238, 0.9);
-            color:rgb(0, 0, 0);
-            border:3px solid white
-        }
-        50%{
-            background-color: rgba(0, 0, 0, 0.9);
-            color:white;
-        }
-        100%{
-            background-color: rgba(235, 223, 223, 0.9);
-            color:rgb(0, 0, 0);
-            border:3px solid rgb(243, 235, 235)
-        }
-    }
-    p{
-        margin:0px 1000px 0px 00px;
-        transform: translateX(820px) translateY(-175px);
-        font-size:22px;
-        background-color: rgb(240, 248, 246);
-        padding:5px 10px;
-        border:1px solid black;
-        border-radius: 10px 10px;
-    }
-    #b1{
-        font-size:29px;  
-        animation: mov2 3s 5;
-    }
     button{
-        transform: translateX(900px) translateY(20px);
+        position: absolute;
+        top:3.2rem;
+        left:30rem;
         padding:5px 10px;
         font-size: 22px;
         border:2px solid black;
@@ -98,42 +60,340 @@ h1{
         font-size:23px;
         border:2px solid whitesmoke;
     }
-    @keyframes mov2{
-        0%{
-            color:black;
-        }
-        50%{
-            color:rgba(26, 26, 234, 0.966);
-        }
-        100%{
-            color:black;
-        }
+     p{
+        position: absolute;
+        left: 18rem;
+        font-size: 1.7rem;
+        top:12rem;
+        color: rgb(7, 7, 7);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        animation: effect 6s 1; 
+     }
+     strong{
+        position: absolute;
+        left: 18rem;
+        font-size: 2rem;
+        top:3rem;
+        color: rgb(8, 8, 8);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      animation: effect 2s 1;
+     }
+     h2{
+        position: absolute;
+        left: 18rem;
+        font-size: 2rem;
+        top:5rem;
+        color: rgb(8, 8, 8);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        animation: effect 4s 1;
+     }
+     .divmenu{
+      position: absolute;
+      visibility: hidden;
+      top:5rem;
+      left: 54.6rem;
+      background-color: #4279bd;
+      padding: 0.5rem;
+      border-radius: 5px;
+      z-index: 1;
+      transition-delay: 5s;
+      height: 4%;
+     }
+     #box{
+      /* From https://css.glass */
+      position:absolute;
+      top:21rem;
+      left:22rem;
+      height: 19.5rem;
+      width: 40rem;
+       background: rgba(0, 0, 0, 0.22);
+       border-radius: 16px;
+       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+       backdrop-filter: blur(1.2px);
+       -webkit-backdrop-filter: blur(1.2px);
+       border: 1px solid rgba(221, 214, 214, 0.63);
+       animation: effect1 11s 1;
+     }
+     li{
+      position: relative;
+        left: 1.7rem;
+        font-size: 1.2rem;
+        top:6.8rem;
+        color: rgb(6, 6, 6);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     }
+     #two{
+      position: absolute;
+      top:14rem;
+      left:23rem;
+      color:#4279bd;
+      font-size: 2.5rem;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      animation: effect1 8s 1;
+     }
+     h3{
+        font-size: 1.5rem;
+        font-family:Arial, Helvetica, sans-serif;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+     }
+     h3:hover{
+        transform: scale(0.9);
+        transition: 0.4s;
+     }
+    .menu:hover+.divmenu{
+    visibility: visible;
+    transition:0.4s;
+    height:11rem;
+    }
+    @keyframes effect {
+      0%{
+        opacity:0;
+      }
+      50%{
+        opacity:0;
+      }
+      
+      100%{
+        color:rgb(8, 8, 8);
+        opacity:1; 
+      }
+    }
+    @keyframes effect1 {
+      0%{
+        
+        opacity:0;
+      }
+      50%{
+        
+        opacity:0; 
+      }
+      100%{
+        color: #4279bd;
+        opacity:1; 
+      }
     }
     
+    @media screen and (min-width:501px) and (max-width:792px){
+        #back{
+        position: absolute;
+        z-index:-1;
+        height: 60rem;
+     }
+     #box{
+      /* From https://css.glass */
+      position:absolute;
+      top:25rem;
+      left:22rem;
+      height: 19.5rem;
+      width: 40rem;
+       background: rgba(0, 0, 0, 0.22);
+       border-radius: 16px;
+       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+       backdrop-filter: blur(1.2px);
+       -webkit-backdrop-filter: blur(1.2px);
+       border: 1px solid rgba(221, 214, 214, 0.63);
+       animation: effect1 11s 1;
+     }
+     li{
+      position: relative;
+        left: 1.7rem;
+        font-size: 1.3rem;
+        top:9rem;
+        color: rgb(6, 6, 6);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     }
+    
+     #two{
+      position: absolute;
+      top:18rem;
+      left:23rem;
+      color:#4279bd;
+      font-size: 2.3rem;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     }
+     }
+     @media screen and (min-width:300px) and (max-width:450px){
+        #back{
+          opacity: 0;
+        position: absolute;
+        z-index:-1;
+        height: 0rem;
+     }
+     .divban{
+      background-color: rgba(167, 237, 237, 0.898);
+      height: 98rem;
+      width: 63rem;
+     }
+     #box{
+      /* From https://css.glass */
+      position:absolute;
+      top:40rem;
+      left:9rem;
+      height: 45rem;
+      width: 46rem;
+       background: rgba(251, 252, 252, 0.22);
+       border-radius: 16px;
+       box-shadow: 40px 40px 30px rgba(43, 43, 43, 0.353);
+       backdrop-filter: blur(1.2px);
+       -webkit-backdrop-filter: blur(1.2px);
+       border: 3px solid rgba(21, 21, 21, 0.63);
+       animation: effect1 10s 1;
+     }
+     ::placeholder{
+        color:rgb(161, 157, 157);
+        opacity:1;
+    }
+    input{
+        position:absolute;
+        top:5rem;
+        left:3rem;
+        padding:15px 45px;
+        border:2px solid black;
+        border-radius: 10px 10px;
+        font-size: 45px;
+    }
+    button{
+        position: absolute;
+        top:13rem;
+        left:30rem;
+        padding:10px 15px;
+        font-size: 33px;
+        border:2px solid black;
+        border-radius: 10px 10px;
+    }
+    button:hover{
+        background-color:rgba(13, 83, 236, 0.814);
+        font-size: 33px;
+    }
+     li{
+      position: relative;
+        left: 1.6rem;
+        font-size: 2.5rem;
+        top:22rem;
+        color: rgb(6, 6, 6);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     }
+     
+     #two{
+      position: absolute;
+      top:30rem;
+      left:10rem;
+      color:#4279bd;
+      font-size: 3.5rem;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     }
+     strong{
+        position: absolute;
+        left: 3rem;
+        font-size: 4rem;
+        top:5rem;
+        color: rgb(8, 8, 8);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      animation: effect 2s 1;
+     }
+     h2{
+        position: absolute;
+        left: 3rem;
+        font-size: 3rem;
+        top:18rem;
+        color: rgb(6, 6, 6);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        animation: effect 4s 1;
+     } 
+     p{
+        position: absolute;
+        left: 3rem;
+        font-size: 2.7rem;
+        top:24rem;
+        color: rgb(7, 7, 7);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+     } 
+     .nav{
+        padding-left: 22rem;
+        height: 7rem;
+        width: 41rem;
+     }
+     h1{
+        font-size: 3rem;
+     }
+     .menu{
+        height: 5.5rem;
+        width:5.6rem;
+     }
+     .divmenu{
+      position: absolute;
+      visibility: hidden;
+      top:7.3rem;
+      left: 49rem;
+      background-color: #4279bd;
+      padding: 0.6rem;
+      border-radius: 5px;
+      z-index: 1;
+      transition-delay: 0.8s;
+      
+     }
+     .menu:hover+.divmenu{
+    visibility: visible;
+    transition:0.4s;
+    height:17rem;
+    }
+    h3:hover{
+        transform: scale(1);
+     }
+    h3{
+        font-size: 2.5rem;
+    }
+     }
     </style>
 </head>
 <body>
-    <h1 style="color: rgb(0, 0, 0);"><i><b>DOCTORS</b></i></h1>
-      <!-- Search Form -->
-      <img src="menu.jpg" id="ig1" alt="" height="4%" width="4%">
-<div id="div1">
-<h3 style="color: aliceblue;" onclick="myfun1()">HOME</h3> 
-<h3 style="color: aliceblue;" onclick="myfun2()">DIAGNOSIS</h3> 
-<h3 style="color: aliceblue;">DOCTORS</h3>
-</div>
-<p><b id="b1">F</b>IND <b id="b1">B</b>EST <b id="b1">D</b>OCTORS <b id="b1">N</b>EAR <b id="b1">Y</b>OU</p>
-<input type="text" placeholder="Enter City" id="inp1">
+    <div class="maindiv">
+    <div class="nav">
+        <div class="divh1">
+        <h1 style="color: rgb(255, 250, 250);"><b>HEALTHASSIST</b></h1></div>
+        <img src="menu.jpg" alt="" height="50rem" width="50rem" class="menu">
+        <div class="divmenu">
+            <h3 style="color: aliceblue;" onclick="myfun1()">HOME</h3> 
+            <h3 style="color: aliceblue;" onclick="myfun2()">DIAGNOSE</h3> 
+            <h3 style="color: aliceblue;">DOCTORS</h3>
+            </div>
+    </div>
+    <div class="divban">
+        <!-- <div class="divmenu">
+        <h3 style="color: aliceblue;">HOME</h3> 
+        <h3 style="color: aliceblue;" onclick="myfun1()">DIAGNOSE</h3> 
+        <h3 style="color: aliceblue;" onclick="myfun2()">DOCTORS</h3>
+        </div> -->
+     <img src="http://getwallpapers.com/wallpaper/full/5/2/0/301819.jpg" width="1010" height="600" id="back">
+     <strong>HELLO!</strong>
+     <h2 style="color: rgb(14, 15, 15);">Are you looking for Doctors Near you?</h2>
+     <p>Take the help of SearchBox to find them.</p>
+     <h4 id="two">SearchBox</h4>
+     <div id="box">
+        <input type="text" placeholder="Enter City" id="inp1">
 <button onclick="myfun()"><b>Search</b></button>
-<script>
-    function myfun(){
-        location.replace("https://www.justdial.com/"+document.getElementById("inp1").value+"/Doctors-Specialists/nct-11151209");
-    }
-    function myfun1(){
-        location.replace("index.html");
-    }
-    function myfun2(){
-        location.replace("diagnosis.html");   
-    }
-</script>
+<ul>
+    <li>Enter the City name.</li>
+    <br>
+    <li>Click on Search botton to find the Doctors in your City.</li>
+    <br>
+    <li>Select the Best Doctor to Book your Appointment.</li>
+</ul>
+     </div>
+    </div>
+    </div>
+    <script>
+        function myfun(){
+            location.replace("https://www.justdial.com/"+document.getElementById("inp1").value+"/Doctors-Specialists/nct-11151209");
+        }
+        function myfun1(){
+            location.replace("index.html");
+        }
+        function myfun2(){
+            location.replace("diagnosis.html");   
+        }
+    </script>
 </body>
 </html>
+   
