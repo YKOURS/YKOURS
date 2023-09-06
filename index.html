@@ -1,134 +1,155 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HEALTH</title>
-<style>
-/* @media only screen and (min-device-width:768px) and (max-device-width:1024px)  
-{ span{
-     background-color:rgba(14, 123, 219, 0.787);
-    padding:45px 100px 20px 100px;
-    margin: 0px 120px 0px 100px;
-    border-radius: 35px 35px;
-    animation:move 3s infinite;}
-    body{
-    background-image: url("back.gif");
-    background-repeat:no-repeat;
-    background-size:1000px 700px;
-}
-} */
-
-body{
-    background-image: url("back.gif");
-    background-repeat:no-repeat;
-    background-size:100%,100%;
-}
-span{
-    background-color:rgba(14, 123, 219, 0.787);
-    padding:45px 300px 20px 300px;
-    margin: 0px 120px 0px 200px;
-    border-radius: 35px 35px;
-    animation:move 3s infinite;
-}
-@keyframes move{
-   0%{background-color: rgba(14, 123, 219, 0.787);
-      }
-   50%{
-    background-color: rgba(17, 244, 9, 0.679);
-   }
-   100%{background-color: rgba(14, 123, 219, 0.787);
+    <title>Document</title>
+    <style>
+        .nav{
+            display: flex;
+            flex-direction: row;
+            background-color:#4279bd;
+            align-items: center;
+            justify-content: space-between;
+            height: 5rem;
+            width: 38.1rem;
+            padding-left: 25rem;
+            border-radius: 5px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-}
-i{
-    font-size: 50px;
-    
-}
-h3{
-    cursor: pointer;
-}
-
-div{
-    background-color:rgb(0, 0, 0);
-   visibility:hidden;
-    padding:2px 0px 2px 10px;
-    margin:10px 0px 0px 1220px; 
-    transition-delay:5s;
-    border-radius: 10% 10%;
-}
-h3:hover{
-    background-color: rgba(14, 123, 219, 0.787);
-    padding: 2px 3px 2px 3px;
-    transition:0.3s;
-}
-
-img:hover+div{
-    visibility: visible; 
-    transition-delay:0.3s; 
-}
-img{
-    transform: translateX(0px)translateY(15px);
-}
-@media only screen and (min-device-width:768px) and (max-device-width:1024px)  
-{ span{
-     background-color:rgba(14, 123, 219, 0.787);
-    padding:40px 100px 20px 100px;
-    margin: 0px 100px 0px 250px;
-    border-radius: 35px 35px;
-    animation:move 3s infinite;}
-    body{
-    background-image: url("back.gif");
-    background-repeat:no-repeat;
-    background-size:15000 760px;
-}
-i{
-    font-size: 50px;   
-}
-h3{
-    cursor: pointer;
-}
-
-div{
-    background-color:rgb(0, 0, 0);
-   visibility:hidden;
-    padding:1px 30px 1px 10px;
-    margin:10px 180px 0px 680px; 
-    transition-delay:4s;
-    border-radius: 10% 10%;
-    transform: translateX(180px);
-}
-h3:hover{
-    background-color: rgba(14, 123, 219, 0.787);
-    padding: 2px 3px 2px 3px;
-    transition:0.3s;
-}
-
-img:hover+div{
-    visibility: visible; 
-    transition-delay:0.3s; 
-}
-img{
-    transform: translateY(15px);
-}
-}
-</style>
+        .divban{
+          position: absolute;
+          width: 52rem;
+          z-index: 0;
+        }
+     #back{
+        position: absolute;
+        z-index:-1;
+        border-radius: 5px;
+        height:37rem;
+     }
+     p{
+        position: absolute;
+        left: 2rem;
+        top:1rem;
+        color: white;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+     }
+     .divmenu{
+      position: absolute;
+      visibility: hidden;
+      top:5rem;
+      left: 56.5rem;
+      background-color: #4279bd;
+      padding: 0.4rem;
+      border-radius: 5px;
+      z-index: 1;
+      transition-delay: 5s;
+      height: 4%;
+     }
+     h3{
+        font-family:Arial, Helvetica, sans-serif;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+     }
+     h3:hover{
+        transform: scale(0.9);
+        transition: 0.4s;
+     }
+    .menu:hover+.divmenu{
+    visibility: visible;
+    transition:0.4s;
+    height:8rem;
+    }
+    @media screen and (min-width:501px) and (max-width:830px){
+        #back{
+        position: absolute;
+        z-index:-1;
+        height: 50rem;
+     } }
+     @media screen and (min-width:300px) and (max-width:450px){
+        #back{
+        position: absolute;
+        z-index:-1;
+        height: 117rem;
+        width:67.5rem;
+     } 
+     p{
+        position: absolute;
+        left: 3rem;
+        font-size: 2.5rem;
+        top:0rem;
+        color: white;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+     } 
+     .nav{
+        padding-left: 22rem;
+        height: 8rem;
+        width: 45.4rem;
+     }
+     h1{
+        font-size: 3rem;
+     }
+     .menu{
+        height: 5.5rem;
+        width:5.6rem;
+     }
+     .divmenu{
+      position: absolute;
+      visibility: hidden;
+      top:7.3rem;
+      left: 53.6rem;
+      background-color: #4279bd;
+      padding: 0.5rem;
+      border-radius: 5px;
+      z-index: 1;
+      transition-delay: 0.8s;
+      
+     }
+     .menu:hover+.divmenu{
+    visibility: visible;
+    transition:0.4s;
+    height:18.5rem;
+    }
+    h3:hover{
+        transform: scale(1);
+     }
+    h3{
+        font-size: 2.5rem;
+    }
+     }
+    </style>
 </head>
 <body>
-<span style="color: rgb(239, 233, 224);"><b><i>HEALTH CARE</i></b></span>
-<img src="menu.jpg" alt="" height="5%" width="5%">
-<div>
-<h3 style="color: aliceblue;">HOME</h3> 
-<h3 style="color: aliceblue;" onclick="myfun1()">DIAGNOSE</h3> 
-<h3 style="color: aliceblue;" onclick="myfun2()">DOCTORS</h3>
-</div>
-<script>
-    function myfun1(){
-        location.replace("diagnosis.html");
-    }
-    function myfun2(){
-        location.replace("doctors.html");   
-    }
-</script>
+    <div class="maindiv">
+    <div class="nav">
+        <div class="divh1">
+        <h1 style="color: rgb(255, 250, 250);"><b>HEALTHASSIST</b></h1></div>
+        <img src="menu.jpg" alt="" height="50rem" width="50rem" class="menu">
+        <div class="divmenu">
+            <h3 style="color: aliceblue;">HOME</h3> 
+            <h3 style="color: aliceblue;" onclick="myfun1()">DIAGNOSE</h3> 
+            <h3 style="color: aliceblue;" onclick="myfun2()">DOCTORS</h3>
+            </div>
+    </div>
+    <div class="divban">
+        <!-- <div class="divmenu">
+        <h3 style="color: aliceblue;">HOME</h3> 
+        <h3 style="color: aliceblue;" onclick="myfun1()">DIAGNOSE</h3> 
+        <h3 style="color: aliceblue;" onclick="myfun2()">DOCTORS</h3>
+        </div> -->
+     <img src="back.gif" width="1010" height="640" id="back">
+     <p>Healthcare and Diagnosis are inherently interconnected, forming the foundation of effective medical practice. Diagnosis serves as a cornerstone in healthcare, providing essential information about a patient's health condition, guiding treatment decisions, and shaping the overall care plan.Patient must take proper medication after Diagnosis, get well soon.</p>
+    </div>
+    </div>
+    <script>
+   function myfun1(){
+   location.replace("diagnosis.html");
+  }
+  function myfun2(){
+  location.replace("doctors.html");   
+  }
+    </script>
 </body>
 </html>
