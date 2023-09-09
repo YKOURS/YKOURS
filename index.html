@@ -11,44 +11,54 @@
             flex-direction: row;
             background-color:#4279bd;
             align-items: center;
-            justify-content: space-between;
-            height: 5rem;
-            width: 38.1rem;
-            padding-left: 25rem;
+            justify-content:space-between;
+            height: 4rem;
+            width: 99%;
+            padding-left: 1rem;
             border-radius: 5px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
+        .maindiv{
+         width:100%;
+        }
+        h1{
+         font-size: 1.8rem;
+        }
         .divban{
           position: absolute;
-          width: 52rem;
+          width:98.8%;
           z-index: 0;
         }
      #back{
         position: absolute;
         z-index:-1;
         border-radius: 5px;
-        height:37rem;
+        width: 100%;
      }
      p{
         position: absolute;
-        left: 2rem;
-        top:1rem;
+        left: 1rem;
+        top:0rem;
+        font-size: 102%;
+        width:75%;
         color: white;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
      }
      .divmenu{
+      width: 9.5%;
       position: absolute;
       visibility: hidden;
-      top:5rem;
-      left: 56.5rem;
+      top:4rem;
+      left: 89%;
       background-color: #4279bd;
-      padding: 0.4rem;
+      padding: 0.6%;
       border-radius: 5px;
       z-index: 1;
       transition-delay: 5s;
       height: 4%;
      }
      h3{
+        font-size:105%;
         font-family:Arial, Helvetica, sans-serif;
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
@@ -60,21 +70,77 @@
     .menu:hover+.divmenu{
     visibility: visible;
     transition:0.4s;
-    height:8rem;
+    height:7.2rem;
     }
-    @media screen and (min-width:501px) and (max-width:830px){
-        #back{
-        position: absolute;
-        z-index:-1;
-        height: 50rem;
-     } }
+    @media screen and (min-width:762px) and (max-width:913px){
+      
+      #back{
+         height: 50vh;
+      }  
+      .maindiv{
+         width: 100%;
+      }
+      .divmenu{
+         width: 10.7%;
+         left: 88%;
+         transition-delay: 0.7s;
+      }
+      h3{
+         font-size: 102%;
+      }
+    }
+    @media screen and (min-width:501px) and (max-width:762px){
+      .nav{
+         width: 100%;
+      }
+      #back{
+         height: 100vh;
+      }  
+      .divban{
+         width: 100%;
+      }  
+      .divmenu{
+         top:4rem;
+         width: 17%;
+         left:83%;
+         transition-delay: 0.7s;
+      }
+      h3{
+         font-size: 102%;
+      }
+   }
      @media screen and (min-width:300px) and (max-width:450px){
-        #back{
+      .nav{
+         width: 100%;
+      }
+      #back{
+         height: 87vh;
+      }  
+      .divban{
+         width: 100%;
+      }  
+      .divmenu{
+         padding-left: 0.2rem;
+         top:4rem;
+         width: 28.5%;
+         left:72%;
+         transition-delay: 0.7s;
+      }
+      h3{
+         font-size: 102%;
+      }
+      p{
+         top:0rem;
+         font-size: 85%;
+         width: 60%;
+      }
+        /* #back{
         position: absolute;
         z-index:-1;
-        height: 123.7rem;
+        height: 117rem;
         width:67.5rem;
      } 
+     
      p{
         position: absolute;
         left: 3rem;
@@ -99,7 +165,7 @@
       position: absolute;
       visibility: hidden;
       top:7.3rem;
-      left: 54.1rem;
+      left: 53.6rem;
       background-color: #4279bd;
       padding: 0.5rem;
       border-radius: 5px;
@@ -117,8 +183,58 @@
      }
     h3{
         font-size: 2.5rem;
+    } */
+    
+    /* .nav{
+      
+      height: 4rem;
+      padding-left: 1.7rem;
+      width:90%;
     }
+    .divban{
+      width:80%;
+    }
+    #back{
+        position: absolute;
+        z-index:-1;
+        height: 45rem;
+        width:22.8rem;
+     } 
+     .divmenu{
+      position: absolute;
+      visibility: hidden;
+      top:4rem;
+      left: 16.5rem;
+      background-color: #4279bd;
+      padding: 0.2rem;
+      border-radius: 5px;
+      z-index: 1;
+      transition-delay: 0.8s;
      }
+     p{
+        position: absolute;
+        left: 1rem;
+        font-size: 0.88rem;
+        width:14.6rem;
+        top:0rem;
+        color: white;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+     } 
+     .menu:hover+.divmenu{
+    visibility: visible;
+    transition:0.4s;
+    height:8rem;
+    }
+    h3:hover{
+        transform: scale(1);
+     }
+    h3{
+        font-size: 1.2rem;
+        -webkit-tap-highlight-color: transparent;
+    }
+      */
+      
+   }
     </style>
 </head>
 <body>
@@ -135,18 +251,16 @@
     </div>
     <div class="divban">
         <!-- <div class="divmenu">
-        <h3 style="color: aliceblue;" onclick="myfun3()">HOME</h3> 
+        <h3 style="color: aliceblue;">HOME</h3> 
         <h3 style="color: aliceblue;" onclick="myfun1()">DIAGNOSE</h3> 
         <h3 style="color: aliceblue;" onclick="myfun2()">DOCTORS</h3>
         </div> -->
-     <img src="back.gif" width="1010" height="640" id="back">
+     
+     <img src="back.gif" id="back">
      <p>Healthcare and Diagnosis are inherently interconnected, forming the foundation of effective medical practice. Diagnosis serves as a cornerstone in healthcare, providing essential information about a patient's health condition, guiding treatment decisions, and shaping the overall care plan.Patient must take proper medication after Diagnosis, get well soon.</p>
     </div>
     </div>
     <script>
-   function myfun3(){
-       location.replace("index.html");
-   }
    function myfun1(){
    location.replace("diagnosis.html");
   }
